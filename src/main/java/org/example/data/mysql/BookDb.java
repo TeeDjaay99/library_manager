@@ -22,7 +22,7 @@ public class BookDb {
            while (rs.next()) {
                books.add(new Book(
                        rs.getInt("book_id"),
-                       rs.getString("title"),
+                       rs.getString("book_title"),
                        rs.getString("author"),
                        rs.getInt("published_year"),
                        rs.getBoolean("available")

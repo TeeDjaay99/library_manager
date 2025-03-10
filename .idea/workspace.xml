@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff1f168-173b-4e8c-84bc-d8c994c3a506" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/data/DynamoDb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/data/SyncDynamoDb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mysql/BookDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/mysql/BookDb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mysql/BorrowerDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/mysql/BorrowerDb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mysql/LoanDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/mysql/LoanDb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mysql/MysqlConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/mysql/MysqlConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/DynamoDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/DynamoDbManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/mysql/BookDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/mysql/BookDb.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +46,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
@@ -140,7 +139,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741523642721</updated>
       <workItem from="1741523644577" duration="2159000" />
-      <workItem from="1741589133463" duration="4031000" />
+      <workItem from="1741589133463" duration="8395000" />
     </task>
     <servers />
   </component>
