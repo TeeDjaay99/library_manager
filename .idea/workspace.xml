@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff1f168-173b-4e8c-84bc-d8c994c3a506" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/data/SyncDynamoDb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/DynamoDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/DynamoDbManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/mysql/BookDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/mysql/BookDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/debug/DebugDynamoDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/debug/DebugDynamoDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/debug/DebugMysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/debug/DebugMysql.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.DebugDynamoDb.executor": "Run",
+    "Application.DebugMysql.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -60,7 +61,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DebugDynamoDb">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -121,6 +122,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DebugDynamoDb" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.debug.DebugDynamoDb" />
+      <module name="library_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.debug.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DebugMysql" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.debug.DebugMysql" />
+      <module name="library_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.debug.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DebugDynamoDb" />
+        <item itemvalue="Application.DebugMysql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -140,6 +173,7 @@
       <updated>1741523642721</updated>
       <workItem from="1741523644577" duration="2159000" />
       <workItem from="1741589133463" duration="8395000" />
+      <workItem from="1741622960018" duration="4490000" />
     </task>
     <servers />
   </component>
