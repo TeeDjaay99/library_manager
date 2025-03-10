@@ -1,4 +1,4 @@
-package org.example.mysql;
+package org.example.data.mysql;
 
 import org.example.models.Book;
 
@@ -16,8 +16,8 @@ public class BookDb {
         String sql = "SELECT * FROM books";
 
         try (Connection conn = MysqlConnector.getConnection();
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)) {
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
 
            while (rs.next()) {
                books.add(new Book(

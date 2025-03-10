@@ -1,4 +1,4 @@
-package org.example.mysql;
+package org.example.data.mysql;
 
 import org.example.models.Borrower;
 

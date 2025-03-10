@@ -1,11 +1,9 @@
-package org.example.mysql;
+package org.example.data.mysql;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import static java.lang.System.err;
 
 public class LoanDb {
 
