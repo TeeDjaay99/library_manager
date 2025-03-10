@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff1f168-173b-4e8c-84bc-d8c994c3a506" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Borrower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Loan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mysql/BookDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mysql/BookDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mysql/BorrowerDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mysql/BorrowerDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mysql/LoanDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mysql/LoanDb.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741523642721</updated>
       <workItem from="1741523644577" duration="2159000" />
-      <workItem from="1741589133463" duration="1310000" />
+      <workItem from="1741589133463" duration="3372000" />
     </task>
     <servers />
   </component>

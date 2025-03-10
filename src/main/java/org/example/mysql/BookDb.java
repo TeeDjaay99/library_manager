@@ -1,4 +1,36 @@
 package org.example.mysql;
 
+import org.example.models.Book;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 public class BookDb {
+
+    public List<Book> getAllBooks() {
+        List<Book> books = new ArrayList<>();
+        String sql = "SELECT * FROM books";
+
+        try (Connection conn = MysqlConnector.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)) {
+
+           while (rs.next()) {
+               books.add(new Book(
+                       rs.getInt("book_id"),
+                       rs.getString("title"),
+                       rs.getString("author"),
+                       rs.getInt("published_year"),
+                       rs.getBoolean("available")
+               ));
+           }
+        } catch (SQLException e) {
+            System.err.println("Database error when retrieving books: " + e.getMessage());
+        }
+        return books;
+    }
 }
