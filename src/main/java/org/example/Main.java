@@ -11,7 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\n Librarysystem - Main menu");
+            System.out.println("\n Library system - Main menu");
             System.out.println("1. Show all books");
             System.out.println("2. Show all loans");
             System.out.println("3. Sync data to DynamoDb");

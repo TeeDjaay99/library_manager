@@ -68,7 +68,9 @@ public class SyncDynamoDb {
 
             while (rs.next()) {
                 Map<String, AttributeValue> item = new HashMap<>();
-                item.put("loan_id", AttributeValue.builder().n(String.valueOf("loan_id")).build());
+
+                // rs.getstring String.valueOf
+                item.put("loan_id", AttributeValue.builder().n(rs.getString("loan_id")).build());
                 item.put("book_title", AttributeValue.builder().s(rs.getString("book_title")).build());
                 item.put("borrower_name", AttributeValue.builder().s(rs.getString("borrower_name")).build());
                 item.put("loan_date", AttributeValue.builder().s(rs.getDate("loan_date").toString()).build());
@@ -80,7 +82,7 @@ public class SyncDynamoDb {
                         .build();
 
                 dynamoDb.putItem(request);
-                System.out.println("Saved in DynamoDB (loans): " + rs.getString("book_title") + " borrowed by" + rs.getString("borrower_name"));
+                System.out.println("Saved in DynamoDB (loans): " + rs.getString("book_title") + " borrowed by: " + rs.getString("borrower_name"));
             }
         } catch (Exception e) {
             System.err.println("Error in synchronizing loans: " + e.getMessage());
