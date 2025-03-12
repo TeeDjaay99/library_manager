@@ -4,8 +4,7 @@ import org.example.data.mysql.BookDb;
 import org.example.data.mysql.LoanDb;
 import org.example.models.Book;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
-import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
-import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
+import software.amazon.awssdk.services.dynamodb.model.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,9 +21,12 @@ public class SyncDynamoDb {
     }
 
     public void syncBooksToDynamoDb() {
+        createTableIfNotExists("LibraryBooks", "book_id");
+
         BookDb bookDb = new BookDb();
         List<Book> books = bookDb.getAllBooks();
 
+        // Creates a HashMap to store the book attribute
         for (Book book : books) {
             Map<String, AttributeValue> item = new HashMap<>();
             item.put("book_id", AttributeValue.builder().n(String.valueOf(book.getBookId())).build());
@@ -33,17 +35,20 @@ public class SyncDynamoDb {
             item.put("published_year", AttributeValue.builder().n(String.valueOf(book.getPublishedYear())).build());
             item.put("available", AttributeValue.builder().bool(book.isAvailable()).build());
 
+            // Creates a put item request to save in DynamoDb
             PutItemRequest request = PutItemRequest.builder()
                     .tableName(BOOKS_TABLE)
                     .item(item)
                     .build();
 
             dynamoDb.putItem(request);
-            System.out.println("Saved in DynamoDB (books):" + book.getTitle());
+            System.out.println("Saved in DynamoDB: " + book.getTitle());
         }
     }
 
     public void syncLoansToDynamoDb() {
+        createTableIfNotExists("LibraryLoans", "loan_id");
+
         LoanDb loanDb = new LoanDb();
         String sql = """
                 SELECT
@@ -79,6 +84,31 @@ public class SyncDynamoDb {
             }
         } catch (Exception e) {
             System.err.println("Error in synchronizing loans: " + e.getMessage());
+        }
+    }
+
+    private void createTableIfNotExists(String tableName, String partitionKey) {
+        try {
+            var dynamoDb = DynamoDbManager.connect();
+
+            var listTableRequest = ListTablesRequest.builder().build();
+            var existingTables = dynamoDb.listTables(listTableRequest).tableNames();
+
+            if (!existingTables.contains(tableName)) {
+                System.out.println("Creating table: " + tableName);
+
+                var createTableRequest = CreateTableRequest.builder()
+                        .tableName(tableName)
+                        .keySchema(KeySchemaElement.builder().attributeName(partitionKey).keyType(KeyType.HASH).build())
+                        .attributeDefinitions(AttributeDefinition.builder().attributeName(partitionKey).attributeType("N").build())
+                        .provisionedThroughput(ProvisionedThroughput.builder().readCapacityUnits(5L).writeCapacityUnits(5L).build())
+                        .build();
+
+                dynamoDb.createTable(createTableRequest);
+                System.out.println("Table created: " + tableName);
+            }
+        } catch (Exception e) {
+            System.err.println("Could not create table: " + tableName + ": " + e.getMessage());
         }
     }
 }

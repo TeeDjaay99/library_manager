@@ -23,6 +23,7 @@ public class DebugMysql {
                 try (Statement stmt = conn.createStatement();
                      ResultSet rs = stmt.executeQuery(sql)) {
 
+                    // Loops through the rows/columns and writes out the information
                     System.out.println("books in the database:");
                     while (rs.next()) {
                         System.out.println("Book-ID: " + rs.getInt("book_id") +
@@ -34,6 +35,7 @@ public class DebugMysql {
                 System.out.println("MySQL-connection failed!");
             }
         } catch (SQLException e) {
+            // Catches error if something goes wrong with the database connection
             System.err.println("MySql-error: " + e.getMessage());
         }
     }

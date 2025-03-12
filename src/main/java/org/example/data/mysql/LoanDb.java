@@ -7,6 +7,7 @@ import java.sql.Statement;
 
 public class LoanDb {
 
+    // Retrieves and shows all loans from MySQL
     public void getAllLoansWithDetails() {
         String sql = """
                 SELECT
@@ -25,6 +26,8 @@ public class LoanDb {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             System.out.println("\n Active loans:");
+
+            // Loops through the result and writes out the loan information
             while (rs.next()) {
                 System.out.println(" Loan-ID: " + rs.getInt("loan_id") +
                         " | Book: " + rs.getString("book_title") +

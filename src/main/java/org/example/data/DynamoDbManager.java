@@ -9,6 +9,7 @@ public class DynamoDbManager {
 
     private static final Region REGION = Region.EU_NORTH_1;
 
+    // Creates a connection to DynamoDb
     public static DynamoDbClient connect() {
         return DynamoDbClient.builder()
                 .region(REGION)

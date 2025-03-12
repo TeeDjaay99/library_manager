@@ -11,6 +11,7 @@ import java.util.List;
 
 public class BookDb {
 
+    // Retrieves all books from MySQL and returns a list
     public List<Book> getAllBooks() {
         List<Book> books = new ArrayList<>();
         String sql = "SELECT * FROM books";
@@ -19,6 +20,7 @@ public class BookDb {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
+           // Loops through the result and creates a book object
            while (rs.next()) {
                books.add(new Book(
                        rs.getInt("book_id"),
