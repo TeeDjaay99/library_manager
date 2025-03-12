@@ -52,7 +52,7 @@ return_date DATE,
 * AWS DynamoDB 
 ### Clone the project
 
-git clone https://github.com/TeeDjaay99/library_manager.git
+git clone `https://github.com/TeeDjaay99/library_manager.git`
 cd library_manager
 
 ### Configure MySQL
