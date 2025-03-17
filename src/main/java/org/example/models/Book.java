@@ -16,6 +16,11 @@ public class Book {
         this.available = available;
     }
 
+    /* I chose to only use Getter because i felt like since im retrieving data from a pre-made MySQL database
+    and not Setting it, it made more sense to me to only use Getters but i can be completely wrong in choosing
+    to do it this way.
+     */
+
     public int getBookId() {
         return bookId;
     }
